@@ -1,5 +1,4 @@
 <?php 
-use Swoole\Http\Request;
 
 
 
@@ -25,8 +24,25 @@ class Controller
     {
       
   
+
         
      
+    }
+
+
+
+    public function getUsers() 
+    {
+        require_once "../app/model/queries/Request.php";
+
+        $request = new Request();
+
+        $result = $request->getQuery();
+
+        return $result;
+
+
+
     }
    
 

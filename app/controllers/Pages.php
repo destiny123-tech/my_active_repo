@@ -23,6 +23,19 @@ class Pages extends Controller
         
     }
 
+
+    public function users() 
+    {
+        
+    
+       $data = [
+            "title" => "Users"
+        ];
+
+        $this->view("pages/users", $data);
+        
+    }
+
     public function register() 
     {
 

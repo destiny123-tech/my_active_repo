@@ -35,7 +35,7 @@
                     <ul class="navbar-nav">
         
                         <li class="nav-item">
-                            <a href="#Computer-Hardware-Engineering" class="nav-link">Computer-Engineering</a>
+                            <a href="index" class="nav-link">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -47,7 +47,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#CAD" class="nav-link">Computer Aided Design</a>
+                         <a href="users" class="nav-link">See our current students</a>
                         </li>
 
                         <li class="nav-item d-md-none">
