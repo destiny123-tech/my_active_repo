@@ -10,13 +10,46 @@ function getControllerInstance()
   return new Controller;
 }
 
+
+
+$url = $_SERVER["REQUEST_URI"];
+
+
+
+if(isset($url)) 
+{
+
+  $modelPrepare = new Controller();
+
+
+  $explodeUrl = explode('?',$url);
+  
+  
+  $id = $explodeUrl[2]; 
+  
+  
+
+
+  $ourValue = $modelPrepare->fetchUserDetails($id);
+
+  
+}
+
+
+
+
+
 if(isset($_POST["submit"])) 
 {
-  $fullname = htmlspecialchars($_POST["fullname"],ENT_QUOTES,'utf-8');
-  $username = htmlspecialchars($_POST["username"],ENT_QUOTES,"utf-8");
-  $email = htmlspecialchars($_POST["email"],ENT_QUOTES,"utf-8");
-  $password = htmlspecialchars($_POST["password"],ENT_QUOTES,"utf-8");
-  $selected = htmlspecialchars($_POST["selected"],ENT_QUOTES ,"utf-8");
+
+
+  unset($ourValue);
+
+
+  $fullnameUpdate = htmlspecialchars($_POST["fullname"],ENT_QUOTES,'utf-8');
+  $usernameUpdate = htmlspecialchars($_POST["username"],ENT_QUOTES,"utf-8");
+  $emailUpdate = htmlspecialchars($_POST["email"],ENT_QUOTES,"utf-8");
+  
 
 
 
@@ -32,10 +65,10 @@ if(isset($_POST["submit"]))
 
     
     require_once "../app/require.php";
-    $model = new Controller();
+    $modelUpdate = new Controller();
   
     ///---- this method is in the core page and it's function is to recieve the user inut and pass it to the model ----///
-    $model->model($fullname,$username,$email,$password,$selected);
+    $modelUpdate->modelUpdate($fullnameUpdate,$usernameUpdate,$emailUpdate,$id);
 
 
     new Database();
@@ -45,22 +78,23 @@ if(isset($_POST["submit"]))
 
 
   /// ----------------------------empty form validation ---------------------------------------------------///
-  if(empty($fullname)) 
+  if(empty($fullnameUpdate)) 
   {
-    $noValueFullname = "Please insert a value into  the fullname";
+    $noValueFullname = "Please insert a fullname to be updated";
   }
   else {
 
 
-    if(isset($model->fullnameError)) 
+   
+    if(isset($modelUpdate->fullnameUpdateError)) 
     {
-   
-      $noValueFullname = $model->fullnameError;
+
+      
+      $noValueFullname = $modelUpdate->fullnameUpdateError;
     }
-   
     else 
     {
-      $valueFullname = $fullname;
+      $valueFullnameUpdate = $fullnameUpdate;
     }
   }
   
@@ -73,22 +107,22 @@ if(isset($_POST["submit"]))
 
 /// -------------------------this path of the code is working parfectly ------------------///
 
-  if(empty($username)) 
+  if(empty($usernameUpdate)) 
   {
-    $noValueUsername = "Please insert a value into the username";
+    $noValueUsername = "Please insert a  username to be updated ";
   }
   else 
   {   
 
-    if(isset($model->usernameError)) 
+    if(isset($modelUpdate->usernameUpdateError)) 
     {
 
       
-      $noValueUsername = $model->usernameError;
+      $noValueUsername = $modelUpdate->usernameUpdateError;
     }
     else 
     {
-      $valueUsername = $username;
+      $valueUsernameUpdate = $usernameUpdate;
     }
   }
 
@@ -97,55 +131,45 @@ if(isset($_POST["submit"]))
 
 
 
-  if(empty($email)) 
+  if(empty($emailUpdate)) 
   {
-    $noValueEmail = "Please insert a value into the email.";
+    $noValueEmail = "Please insert an email to be updated";
   }
   else 
   {
-    if(isset($model->emailError)) 
+    if(isset($modelUpdate->emailUpdateError)) 
     {
-      $noValueEmail = $model->emailError;
+      $noValueEmail = $modelUpdate->emailUpdateError;
     }
     else
     {
-      $valueEmail = $email;
+      $valueEmailUpdate = $emailUpdate;
     }
   }
 
   //--------------------------
 
 
-  if(empty($password)) 
-  {
-    $noValuePassword = "Please insert a value into the password . ";
-  }
+  /*
 
-  else
-  {
-    if(isset($model->passwordError)) 
-    {
-      $noValuePassword = $model->passwordError;
-    }
-    else
-    {
-      $valuePassword = $password;
-    }
-  }
+echo $valueFullnameUpdate . "<br>";
+echo $valueEmailUpdate . "<br>";
+echo $valueUsernameUpdate . "<br>";
 
-    //----------- catching the error for invalid inputs 
-
- 
-
-
-//}
-
-
+*/
 
   
 
 
+
+
+
+
+
+
 }
+
+
 
 
 
@@ -198,7 +222,7 @@ if(isset($_POST["submit"]))
                         </li>
 
                         <li class="nav-item">
-                            <a href="#Web-Development" class="nav-link">Other action</a>
+                            <a href="#Web-Development" class="nav-link">Web-Development</a>
                         </li>
 
                         <li class="nav-item">
@@ -221,11 +245,13 @@ if(isset($_POST["submit"]))
 
     <form action=<?php echo  $_SERVER["REQUEST_URI"]  ?> method="POST">
         <fieldset>
-          <legend>Register a class now </legend>
+          <legend>Update users </legend>
           <!-- this is the division for the full name  -->
             <div class="mb-3">
             <label for="TextInput" class="form-label">Fullname:</label>
-            <input type="text" id="fullname" name="fullname" class="form-control" placeholder="surname first">
+            <input type="text" id="fullname" name="fullname" class="form-control" placeholder="surname first" value=<?php
+            if(isset($ourValue)){echo $ourValue['fullname'];}  
+            ?>>
           
             <!-- empty fullname form message  -->
             <div>
@@ -241,7 +267,9 @@ if(isset($_POST["submit"]))
            <!-- this is the division for the username -->
           <div class="mb-3">
             <label for="TextInput" class="form-label">Username:</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="username">
+            <input type="text" id="username" name="username" class="form-control" placeholder="username"value=<?php
+            if(isset($ourValue)){  echo $ourValue['username'];}
+            ?> >
 
             <div>
               <p  style="color:red"><?php if(isset($noValueUsername)) {echo $noValueUsername ; } ; ?></p>
@@ -251,13 +279,15 @@ if(isset($_POST["submit"]))
          <!-- this is the division for the email -->
           <div class="mb-3">
             <label for="TextInput" class="form-label">Email</label>
-            <input type="text" id="email" name="email" class="form-control" placeholder="email">
+            <input type="text" id="email" name="email" class="form-control" placeholder="email"  value=<?php
+            if(isset($ourValue)){echo $ourValue['email'];}
+            ?>>
             <div>
               <p  style="color:red"><?php if(isset($noValueEmail)) {echo $noValueEmail ; } ; ?></p>
             </div>
           </div>
 
-          <div class="mb-3">
+        <!--  <div class="mb-3">
             <label for="TextInput" class="form-label">Password</label>
             <input type="password" id="email" name="password" class="form-control" placeholder="password">
 
@@ -269,7 +299,7 @@ if(isset($_POST["submit"]))
         
 
 
-          <div class="mb-3">
+           <div class="mb-3">
             <label for="Select" class="form-label">Select course:</label>
             <select  id="Select" name="selected" class="form-select">
               <option>Computer Eng</option>
@@ -278,6 +308,8 @@ if(isset($_POST["submit"]))
               <option>Graphics-Design</option>
             </select>
           </div>
+
+          -->
 
 
 
@@ -297,7 +329,7 @@ if(isset($_POST["submit"]))
             </div>
           </div>
       
-    -->
+    --> 
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 
 
@@ -310,7 +342,6 @@ if(isset($_POST["submit"]))
 
 
 </div>
-
 
 
 

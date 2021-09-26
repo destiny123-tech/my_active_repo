@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    
 
     <div class="container">
 
@@ -38,12 +39,10 @@
                             <a href="index" class="nav-link">Home</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#Graphics-Design" class="nav-link"> Graphics-Design</a>
-                        </li>
+                   
 
                         <li class="nav-item">
-                            <a href="#Web-Development" class="nav-link">Web-Development</a>
+                            <a href="#Web-Development" class="nav-link">Other Action</a>
                         </li>
 
                         <li class="nav-item">
@@ -64,6 +63,118 @@
         </nav>
         
 <!--||------------------------------------------- beginning of the section close of header -------------------||-->
+
+
+
+
+
+
+<!---// this is the section explaining the purpose of the site we are creating -------------------->
+
+
+
+
+
+        <section class="my-5" id="Computer-Hardware-Engineering">
+
+            <div class="container">
+                <div class="text-center">
+                    <h2>About the developer:</h2>
+                
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <p class="lead my-4">
+                            My names are: Obamwonyi Destiny.
+                        </p>
+                        <p class="lead my-4">
+                            Am and undergraduate in <b> Computer-Engineering in the University of Benin </b>
+                        </p>
+                        <p class="lead my-4">
+                            Am a backend Engineer with little experience.
+                        </p>
+                        
+                       
+                    
+                    </div>
+                </div>
+            </div>
+
+                <!-- this division is for the accordions -->
+
+
+
+
+
+                <!-- this division is for the cards -->
+
+
+                <div class="bg-light mt-5">
+
+                    <div class="container-lg">
+                        <div class="container-lg">
+                            <div class="text-center">
+                                <p class="lead my-4">This site was created to demostrate a CRUD system using php with the application of 
+                            OOP and MVC.</p>
+                                <h1 class="lead text-muted"> Programming languages i code with</h1>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                    <div class="row my-5 align-items-center justify-content-center g-0" id="pricing">
+                        <div class="col-8 col-lg-4 col-xl-3"> 
+                
+                            <div class="card border-0">
+                                <div class="card-body text-center py-4">
+                                    <h4 class="card-title">SQL</h4>
+                                    <p class="lead card-subtitle">Using MYSQL DATABASE</p>
+                                    
+                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                        I can write sql code using phpmyadmine as my local development platform.
+                                    </p>
+                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                        I also have basic understanding of shell scripting,html,css and jscript .
+                                    </p>
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                
+                
+                
+                        <div class="col-9 col-lg-4">
+                            <div class="card border-primary border-2">
+                                <div class="card-header text-center text-primary">
+                                    <div class="card-body text-center py-5">
+                                    
+                                        <p class="display-4 my-4 text-primary fw-bold">PHP</p>
+                                        <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                            I can write php code for backend development projects . 
+                                            I have a standard understanding of MVC and OOP .
+                                        </p>
+                
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                
+                
+                
+                        
+                
+                    </div>
+                
+                </section>
+
+
+<!----------------------------------end of the purpose section ------------------------------------->
+
+
 
         <section class="my-5" id="Computer-Hardware-Engineering">
 
@@ -119,7 +230,7 @@
                                     <p class="card-text mx-5 text-muted d-none d-lg-block">
                                         This will give you an introduction to Computer-Engineering.
                                     </p>
-                                    <a href="#" class="btn btn-outline-primary btn-lg mt-3">Register Now</a>
+                                    <a href="register" class="btn btn-outline-primary btn-lg mt-3">Register Now</a>
                                 </div>
                 
                             </div>
@@ -139,7 +250,7 @@
                                             Full training on  Computer-Engineering with preparation for comptia A+ certification
                                         </p>
                 
-                                        <a href="#" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
+                                        <a href="register" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
                                         
                                     </div>
                                 </div>
@@ -221,7 +332,7 @@
                                               <!--  <p class="card-text mx-5 text-muted d-none d-lg-block">
                                                 </p> -->
                         
-                                                <a href="#" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
+                                                <a href="register" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
                                                 
                                             </div>
                                         </div>
@@ -297,7 +408,7 @@
                                                             There will be some classes on Graphics Design.
                                                         </p>
                                 
-                                                        <a href="#" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
+                                                        <a href="register" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
                                                         
                                                     </div>
                                                 </div>
@@ -373,7 +484,7 @@
                                                             <p class="card-text mx-5 text-muted d-none d-lg-block">
                                                                 With the use of Auto-CAD only . 
                                                             </p>
-                                                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">Register Now</a>
+                                                            <a href="register" class="btn btn-outline-primary btn-lg mt-3">Register Now</a>
                                                         </div>
                                         
                                                     </div>
@@ -393,7 +504,7 @@
                                                                     With use of Auto-CAD and Regit .
                                                                 </p>
                                         
-                                                                <a href="#" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
+                                                                <a href="register" class="btn btn-outline-primary btn-lg mt-3"> Register Now</a>
                                                                 
                                                             </div>
                                                         </div>
@@ -469,6 +580,8 @@
 
 </div> <!-- this is the closing tag for  the container division  -->
 
-<script src="../js/bootstrap.bundle.js"></script>
+<script src="../js/bootstrap.bundle.js"> </script>
+
+
 </body>
 </html>

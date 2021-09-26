@@ -20,9 +20,24 @@ class Controller
     public $queryPassword;
     public $queryCourse;
 
+
+// this are the properties for fullname  . 
+    public $queryFullnameUpdate;
+    public $queryUsernameUpdate;
+    public $queryEmailUpdate;
+
+
+    public $fullnameUpdateError;
+    public $usernameUpdateError;
+    public $emailUpdateError;
+// -----------------------------------------------------//
+
+
     public function __construct()
     {
       
+
+        
   
 
         
@@ -45,6 +60,140 @@ class Controller
 
     }
    
+
+    /// the modelUpdate method is for updating the users details 
+
+    public function modelUpdate($passFullnameUpdate,$passUsernameUpdate,$passEmailUpdate,$passId) 
+    {
+
+        //I did not reassign Id i will simply use it from the parameter argument value . 
+
+
+
+    
+
+    require_once "../app/model/queries/Validate.php";
+
+    $validate = new Validate();
+
+    // this guy is actually returnning true and false . 
+   
+
+    //if the validation is successfull (it returns true ) then go on to call the database method and pass the query
+
+    //else if the validation is not successfull then return an error message .
+
+    //----working with data from the fullname form input . 
+    if($validate->validateFullname($passFullnameUpdate) == true)
+    {
+
+        /// now testing 
+        $this->queryFullnameUpdate = $passFullnameUpdate;
+    }
+    else 
+    {
+        $this->fullnameUpdateError = "Invalide fullname";
+    }
+
+
+
+    if($validate->validateUsername($passUsernameUpdate) == true) 
+    {
+
+        // now testing 
+        $this->queryUsernameUpdate = $passUsernameUpdate;
+    }
+    else
+    {
+        $this->usernameUpdateError = "Invalid username";
+    }
+
+
+    
+    if($validate->validateEmail($passEmailUpdate) == true) 
+    {
+
+        $this->queryEmailUpdate = $passEmailUpdate;
+    }
+    else 
+    {
+        $this->emailUpdateError = "Invalid email";
+    }
+
+
+    
+
+
+//i was going to start querying . 
+
+  
+
+    
+
+    if(isset($this->queryFullnameUpdate) && isset($this->queryUsernameUpdate) && isset($this->queryEmailUpdate)) 
+    {  
+
+
+
+        /*  This is the initial way i tried to execute th equery but it took too long . 
+
+    require_once "../app/model/queries/Insert.php";
+
+    $insert = new Insert($this->queryFullname,$this->queryUsername,$this->queryEmail,$this->queryPassword,$this->queryCourse);
+
+
+    if($insert) 
+   {
+       $insert->prepare();
+
+       ;
+      if($insert->bindSql()) 
+      {
+          echo "bind was successfull";
+      }
+      else 
+      {
+          echo "bind was not successfull";
+      }
+   } */
+
+
+   $sql = "UPDATE users SET 
+
+   `fullname` =?, 
+   `username` =?, 
+   `email` = ? 
+
+   WHERE id = ?
+   ;"; 
+
+
+
+require_once "../app/require.php";
+
+   $db = new Database();
+   $preStmt = $db->pdo;
+
+
+   $stmt = $preStmt->prepare($sql);
+
+
+   $stmt->bindValue(1,$this->queryFullnameUpdate);
+   $stmt->bindValue(2,$this->queryUsernameUpdate);
+   $stmt->bindValue(3,$this->queryEmailUpdate);
+   $stmt->bindValue(4,$passId);
+
+
+   $stmt->execute();
+
+
+   
+
+  
+  
+
+    }
+}
 
     // the model for inserting and validating the form . 
 
@@ -179,6 +328,36 @@ require_once "../app/require.php";
    
     
     
+
+
+   }
+
+
+
+   public function fetchUserDetails($identify)
+   {
+
+    $id = $identify;
+    $updateSql = "SELECT fullname,username,email FROM users WHERE id =?";
+
+    $db = new Database();
+
+
+    $stmt = $db->pdo->prepare($updateSql);
+    if($stmt)
+    {
+        $stmt->bindValue(1,$id);
+
+        $stmt->execute();
+
+
+        $result = $stmt->fetch();
+
+        return $result;
+
+    }
+
+
 
 
    }

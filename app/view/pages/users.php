@@ -29,6 +29,8 @@ foreach($controller->getUsers() as $value)
 
 
 
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,6 +41,8 @@ foreach($controller->getUsers() as $value)
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<div class="container">
 
 
 <nav class="navbar   border-bottom navbar-expand-md navbar-light" id="Top-nav">
@@ -96,7 +100,6 @@ foreach($controller->getUsers() as $value)
 
 
 
-
 <?php    foreach($controller->getUsers() as $value) {  ?>
 <section class="my-5" id="CAD">
 
@@ -111,9 +114,12 @@ foreach($controller->getUsers() as $value)
                             <h4 class="card-title"> <?php  echo $value['username'] ;    ?> </h4>
                             <p class="lead card-subtitle"> <?php echo $value['email'] ; ?></p>
                             <p class="display-4 my-4 text-primary fw-bold"><?php echo $value['course'];   ?></p>
-                            <!--<p class="card-text mx-5 text-muted d-none d-lg-block">
-                                With use of Auto-CAD and Regit .
-                            </p>-->
+                            <a href=<?php echo "update?9sk989n?{$value['id']}" ;?>
+                            class="btn btn-outline-primary btn-lg mt-3">Update this account</a>
+                            <a  href=<?php echo "delete?{$value['id']}";?> 
+                            class="btn btn-outline-primary btn-lg mt-3">Delete this account</a>
+
+                         
     
                             
                             
@@ -130,6 +136,8 @@ foreach($controller->getUsers() as $value)
 
   
 </div> 
+
+</div>
 
 <script src="../js/bootstrap.bundle.js"></script>
 </body>

@@ -36,6 +36,33 @@ class Pages extends Controller
         
     }
 
+
+
+    public function update() 
+    {
+        
+    
+       $data = [
+            "title" => "update"
+        ];
+
+        $this->view("pages/update", $data);
+        
+    }
+
+    public function delete() 
+    {
+        
+    
+       $data = [
+            "title" => "delete"
+        ];
+
+        $this->view("pages/delete", $data);
+        
+    }
+
+
     public function register() 
     {
 

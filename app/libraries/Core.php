@@ -10,7 +10,9 @@ class Core
     public $currentController;
     public $currentMethod;
     public $params = [];
+    public $url;
 
+    //public $url =$this->getUrl();
 
     ///to check if model received the data . 
 
@@ -33,9 +35,10 @@ class Core
         $url = $this->getUrl();
 
 
+        if($url !== null) 
+        {
 
-
-        if(file_exists("../app/controllers/" .ucwords($url[0]) .".php"))
+        if(file_exists("../app/controllers/".ucwords($url[0]).".php"))
         {
 
             $this->currentController = $url[0];
@@ -58,6 +61,8 @@ class Core
 
         $this->params ? array_values($url) : [];
         call_user_func_array([$this->currentController,$this->currentMethod],$this->params);
+    }
+
     }
 
 
