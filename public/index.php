@@ -1,7 +1,7 @@
 <?php
 
 
-    //require_once "../app/require.php";
+    
 
    
 
@@ -30,19 +30,20 @@
 
     echo $trimUrl;
 
-   /* $trimeUrl = trim($_SERVER["REQUEST_URI"],"/");
+  
 
+    require_once "../app/require.php";
    
-    echo "the page is working" ."<br>";
+    
 
-    if($trimeUrl == "realsensorcrud.herokuapp.com")
+    if($trimeUrl == "http://realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
     }
     else
     {
-       echo $trimeUrl;
-    }*/
+       var_dump($trimeUrl) ;
+    }
 
 
 
