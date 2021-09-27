@@ -30,13 +30,13 @@
 
     
 
-  
+
 
     require_once "../app/require.php";
    
     
 
-    if($trimUrl == "http://realsensorcrud.herokuapp.com")
+    if($trimUrl == "http://localhost/realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
     }
