@@ -3,19 +3,23 @@
 
     require_once "../app/require.php";
 
-    $trimeUrl = trim($_SERVER["REQUEST_URI"],"/");
+    $url = $_SERVER["HOST"];
+
+    echo $url;
+
+   /* $trimeUrl = trim($_SERVER["REQUEST_URI"],"/");
 
    
-    echo "the page is working";
+    echo "the page is working" ."<br>";
 
-    if($trimeUrl == "http:realsensorcrud.herokuapp.com")
+    if($trimeUrl == "realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
     }
     else
     {
        echo $trimeUrl;
-    }
+    }*/
 
 
 
