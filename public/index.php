@@ -36,13 +36,13 @@
    
     
 
-    if($trimeUrl == "http://realsensorcrud.herokuapp.com")
+    if($trimUrl == "http://realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
     }
     else
     {
-       var_dump($trimeUrl) ;
+       
     }
 
 
