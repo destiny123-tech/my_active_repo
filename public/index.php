@@ -24,7 +24,7 @@
     $link .= $_SERVER['REQUEST_URI'];
           
     // Print the link
-    echo $link;
+    echo $link . "<br>";
 
     $trimUrl = trim($link,'/');
 
