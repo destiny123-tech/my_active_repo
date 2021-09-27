@@ -1,7 +1,7 @@
 <?php
 
 
-    require_once "../app/require.php";
+    //require_once "../app/require.php";
 
     $url = $_SERVER["HOST"];
 
