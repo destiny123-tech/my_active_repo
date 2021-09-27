@@ -5,6 +5,8 @@
 
     $trimeUrl = trim($_SERVER["REQUEST_URI"],"/");
 
+    echo $trimeUrl;
+
     if($trimeUrl == "realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
