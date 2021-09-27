@@ -24,11 +24,11 @@
     $link .= $_SERVER['REQUEST_URI'];
           
     // Print the link
-    echo $link . "<br>";
+
 
     $trimUrl = trim($link,'/');
 
-    echo $trimUrl;
+    
 
   
 
@@ -42,6 +42,7 @@
     }
     else
     {
+        require_once "../app/require.php";
        
     }
 
