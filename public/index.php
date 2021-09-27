@@ -6,6 +6,7 @@
     $trimeUrl = trim($_SERVER["REQUEST_URI"],"/");
 
     echo $trimeUrl;
+    echo trim($_SERVER["REQUEST_URI"],"/");
 
     if($trimeUrl == "realsensorcrud.herokuapp.com")
     {
