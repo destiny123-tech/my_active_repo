@@ -32,7 +32,7 @@
    
 
 
-    if($trimUrl == "http://realsensorcrud.herokuapp.com")
+    if($trimUrl == "http://localhost/realsensorcrud")
     {
         header("Location:Pages/index");
     }
