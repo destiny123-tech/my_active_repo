@@ -1,6 +1,8 @@
 <?php
 
 
+echo "i got to the index page in the public directory ";
+
 
     // Program to display URL of current page.
       
