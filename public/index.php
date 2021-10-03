@@ -33,7 +33,7 @@ echo "i got to the index page in the public directory ";
    
     echo $trimUrl;
 
-    if($trimUrl == "http://localhost/realsensorcrud")
+    if($trimUrl == "http://realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
     }
