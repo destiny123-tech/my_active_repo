@@ -1,7 +1,6 @@
 <?php
 
 
-echo "i got to the index page in the public directory ";
 
 
     // Program to display URL of current page.
@@ -31,7 +30,7 @@ echo "i got to the index page in the public directory ";
 
     //require_once "../app/require.php";
    
-    echo $trimUrl;
+
 
     if($trimUrl == "http://realsensorcrud.herokuapp.com")
     {
