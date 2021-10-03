@@ -1,12 +1,7 @@
 <?php
 
 
-    
 
-   
-
-
-  
     // Program to display URL of current page.
       
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
@@ -32,11 +27,11 @@
 
 
 
-    require_once "../app/require.php";
+    //require_once "../app/require.php";
    
     
 
-    if($trimUrl == "http://localhost/realsensorcrud.herokuapp.com")
+    if($trimUrl == "http://localhost/realsensorcrud")
     {
         header("Location:Pages/index");
     }
@@ -45,11 +40,3 @@
         require_once "../app/require.php";
        
     }
-
-
-
-  
-
-
-
-
