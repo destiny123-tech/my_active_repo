@@ -31,7 +31,7 @@ echo "i got to the index page in the public directory ";
 
     //require_once "../app/require.php";
    
-    
+    echo $trimUrl;
 
     if($trimUrl == "http://localhost/realsensorcrud")
     {
