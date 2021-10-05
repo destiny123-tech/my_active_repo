@@ -27,7 +27,7 @@
     $trimUrl = trim($link,'/');
 
     echo $trimUrl ; 
-    
+
 
 
 
@@ -36,7 +36,7 @@
    
 
 
-    if($trimUrl == "http://localhost/realsensorcrud")
+    if($trimUrl == "http://realsensorcrud.herokuapp.com")
     {
         header("Location:Pages/index");
     }
