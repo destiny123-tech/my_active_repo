@@ -26,6 +26,9 @@
 
     $trimUrl = trim($link,'/');
 
+    echo $trimUrl ; 
+    
+
 
 
 
