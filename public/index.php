@@ -26,11 +26,6 @@
 
     $trimUrl = trim($link,'/');
 
-    echo $trimUrl ; 
-
-
-
-
 
     //require_once "../app/require.php";
    
