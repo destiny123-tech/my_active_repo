@@ -2,8 +2,4 @@
 RewriteEngine On 
 RewriteRule ^$ public/index.php [L] 
 RewriteRule (.*) public/$1 [L] 
-
-LimitInternalRecursion 100
-
 </IfModule> 
-
