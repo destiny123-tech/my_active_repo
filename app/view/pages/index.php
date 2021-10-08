@@ -93,9 +93,8 @@
                         <p class="lead my-4">
                             Am a backend Engineer with little experience.
                         </p>
-                        <p>
-                            please use desktop view for more information, if you are not on bigscreened device.
-                        </p>
+                       
+                       
                         
                        
                     
@@ -125,7 +124,7 @@
                     </div>
                 
                 
-                    <div  style = "margin-bottom : 50px" class="row my-5 align-items-center justify-content-center g-0" id="pricing">
+                    <div  class="row my-5 align-items-center justify-content-center g-0" id="pricing">
                         <div class="col-8 col-lg-4 col-xl-3"> 
                 
                             <div class="card border-0">
@@ -133,15 +132,15 @@
                                     <h4 class="card-title">SQL</h4>
                                     <p class="lead card-subtitle">Using MYSQL DATABASE</p>
                                     
-                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
-                                        I can write sql code using phpmyadmine as my local development platform.
+                                    <p class="card-text mx-5  text-muted d-lg-block">
+                                        I can write <a href="">SQL</a> code using <a href="">PHPMYADMIN</a>  as my local development platform.
                                     </p>
-                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
-                                        I also have basic understanding of shell scripting,html,css and jscript .
+                                    <p class="card-text mx-5  text-muted d-lg-block">
+                                        I also have basic understanding of  <a href="">HTML</a>,<a href="">CSS</a> and <a href="">JavaScript</a>
                                     </p>
 
-                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
-                                        my git repository <a href="https://github.com/destiny123-tech/my_active_repo">https://github.com/destiny123-tech/my_active_repo</a>
+                                    <p class="card-text mx-5  text-muted d-lg-block">
+                                        my git repository: <a href="https://github.com/destiny123-tech/my_active_repo">https://github.com/destiny123-tech/my_active_repo</a>
                                     </p>
                                 </div>
                 
@@ -157,7 +156,7 @@
                                     <div class="card-body text-center py-5">
                                     
                                         <p class="display-4 my-4 text-primary fw-bold">PHP</p>
-                                        <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                        <p class="card-text mx-5  text-muted d-lg-block">
                                             I can write php code for backend development projects . 
                                             I have a standard understanding of MVC and OOP .
                                         </p>
