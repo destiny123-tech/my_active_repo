@@ -93,6 +93,9 @@
                         <p class="lead my-4">
                             Am a backend Engineer with little experience.
                         </p>
+                        <p>
+                            please use desktop view for more information, if you are not on bigscreened device.
+                        </p>
                         
                        
                     
@@ -122,7 +125,7 @@
                     </div>
                 
                 
-                    <div class="row my-5 align-items-center justify-content-center g-0" id="pricing">
+                    <div  style = "margin-bottom : 50px" class="row my-5 align-items-center justify-content-center g-0" id="pricing">
                         <div class="col-8 col-lg-4 col-xl-3"> 
                 
                             <div class="card border-0">
