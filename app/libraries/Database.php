@@ -15,7 +15,7 @@ class Database
         try
         { 
             
-            $this->pdo = new PDO("mysql:host=localhost;dbname=realsensor;", "root" ,"") ;
+            $this->pdo = new PDO("mysql:host=us-cdbr-east-04.cleardb.com;dbname=realsensor;", "bd2284bac778f7" ,"46c3b5ec") ;
 
 
             

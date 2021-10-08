@@ -136,6 +136,10 @@
                                     <p class="card-text mx-5 text-muted d-none d-lg-block">
                                         I also have basic understanding of shell scripting,html,css and jscript .
                                     </p>
+
+                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                        my git repository <a href="https://github.com/destiny123-tech/my_active_repo">https://github.com/destiny123-tech/my_active_repo</a>
+                                    </p>
                                 </div>
                 
                             </div>
